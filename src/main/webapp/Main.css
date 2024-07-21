@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+*{
+	padding: 0;
+	margin:0;
+}
+body{
+    background-color: rgba(250, 240, 246, 0.158);
+}
+.main-title{
+	color: rgb(226, 164, 18);
+}
+.btn-container{
+	display: flex;
+	justify-content: center;
+	margin-top: 45%;
+}
+.admin-btn{
+	border-radius: 25px;
+	color: aliceblue;
+	background-color: #23262e;
+	width: 250px;
+	height: 50px;
+}
+.user-btn{
+	border-radius: 25px;
+	margin-left: 20px;
+	background-color: #eefbfa;
+	width: 250px;
+	height: 50px;
+}
+
+

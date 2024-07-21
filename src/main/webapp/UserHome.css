@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.card-container{
+    display: none;
+   
+}
+.card{
+    margin-top: 50px;
+    text-align: center;
+    padding: 25px;
+    width: 300px;
+    border: 2px solid black;
+    background-color: rgb(164, 168, 171);
+   
+}
+.book-btn{
+	display: block;
+}

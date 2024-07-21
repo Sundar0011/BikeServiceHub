@@ -1,0 +1,53 @@
+.bike-container{
+
+}
+.bike-card{
+    margin: 10px 50px;
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(217, 231, 244);
+    display: flex;
+    justify-content: space-between;
+}
+.b-id{
+    
+}
+.b-model{
+    
+}
+.b-number{
+
+}
+.book-btn{
+    height: 40px;
+    border-radius: 5px;
+}
+.card-container{
+    display: none;
+   
+}
+.card{
+    margin-top: 50px;
+    text-align: center;
+    padding: 25px;
+    width: 300px;
+    border: 2px solid black;
+    background-color: rgb(164, 168, 171);
+   
+}
+.service-container{
+   display: flex;
+   justify-content: center;
+   display: none;
+}
+.service-form{
+    border-radius: 10px;
+    background-color: rgb(241, 245, 249);
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+    width: 300px;
+    height: 400px;
+}
+.form-check{
+    margin-top: 20px;
+}

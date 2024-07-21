@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.main-title{
+	color: rgb(226, 164, 18);
+}
+.btn-container{
+    
+    margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	
+}
+.login-btn{
+	border-radius: 25px;
+	color: aliceblue;
+	background-color: #23262e;
+	width: 250px;
+	height: 50px;
+}
+.signup-btn{
+
+	border-radius: 25px;
+	margin-left: 20px;
+	background-color: #eefbfa;
+	width: 250px;
+	height: 50px;
+}
+.card-container{
+
+}
+.login-card{
+    margin-top: 100Px;
+    display: none;
+    width: 400px;
+    background-color: #eef2fb;
+}
+.signup-card{
+    display: none;
+    width: 400px;
+    background-color: #eef2fb;
+}
+.otp-card{
+
+    display: none;
+    width: 400px;
+    background-color: #eef2fb;
+}
+.card{
+    padding: 10px;
+}
+
