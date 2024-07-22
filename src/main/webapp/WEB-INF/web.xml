@@ -69,4 +69,44 @@
     <servlet-name>ServiceServlet</servlet-name>
     <url-pattern>/ServiceServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>pendingServlet</display-name>
+    <servlet-name>pendingServlet</servlet-name>
+    <servlet-class>com.service.pendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>pendingServlet</servlet-name>
+    <url-pattern>/pendingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>changeStatus</display-name>
+    <servlet-name>changeStatus</servlet-name>
+    <servlet-class>com.service.changeStatus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>changeStatus</servlet-name>
+    <url-pattern>/changeStatus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>readyServlet</display-name>
+    <servlet-name>readyServlet</servlet-name>
+    <servlet-class>com.service.readyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>readyServlet</servlet-name>
+    <url-pattern>/readyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>completeServlet</display-name>
+    <servlet-name>completeServlet</servlet-name>
+    <servlet-class>com.service.completeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>completeServlet</servlet-name>
+    <url-pattern>/completeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

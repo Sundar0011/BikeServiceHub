@@ -73,4 +73,169 @@ public class UserDAO {
 	    return false;
 	}
 
+    public String pendingDetails(String opt) {
+        try {
+            List<PendingList> list = new ArrayList<>();
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "sundar");
+
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT service_date, service_description, bike_id FROM service WHERE status = ?");
+            preparedStatement.setString(1, opt);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                String serviceDate = resultSet.getString("service_date");
+                String serviceDescription = resultSet.getString("service_description");
+                int bikeId = resultSet.getInt("bike_id");
+
+                // Fetch bike details using bike_id
+                PreparedStatement bikeStmt = con.prepareStatement("SELECT bike_model, bike_number FROM bike WHERE bike_id = ?");
+                bikeStmt.setInt(1, bikeId);
+                ResultSet bikeResultSet = bikeStmt.executeQuery();
+
+                String bikeModel = "";
+                String bikeNumber = "";
+                if (bikeResultSet.next()) {
+                    bikeModel = bikeResultSet.getString("bike_model");
+                    bikeNumber = bikeResultSet.getString("bike_number");
+                }
+
+                PendingList pendingList = new PendingList(serviceDate, serviceDescription, bikeId, bikeModel, bikeNumber);
+                list.add(pendingList);
+            }
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            String json = objectMapper.writeValueAsString(list);
+            System.out.println(json);
+            return json;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+	public boolean updateStatus(String bikeId, String status) {
+		try {
+			   Class.forName("oracle.jdbc.driver.OracleDriver");
+	            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "sundar");
+
+	            PreparedStatement preparedStatement = con.prepareStatement("update service set status=? where bike_id=?");
+	            preparedStatement.setString(1, status);
+	            preparedStatement.setString(2,bikeId);
+	            preparedStatement.executeQuery();
+	            return true;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public String readyDetails(String opt) {
+        try {
+            List<PendingList> list = new ArrayList<>();
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "sundar");
+
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT service_date, service_description, bike_id FROM service WHERE status = ?");
+            preparedStatement.setString(1, opt);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                String serviceDate = resultSet.getString("service_date");
+                String serviceDescription = resultSet.getString("service_description");
+                int bikeId = resultSet.getInt("bike_id");
+
+                // Fetch bike details using bike_id
+                PreparedStatement bikeStmt = con.prepareStatement("SELECT bike_model, bike_number FROM bike WHERE bike_id = ?");
+                bikeStmt.setInt(1, bikeId);
+                ResultSet bikeResultSet = bikeStmt.executeQuery();
+
+                String bikeModel = "";
+                String bikeNumber = "";
+                if (bikeResultSet.next()) {
+                    bikeModel = bikeResultSet.getString("bike_model");
+                    bikeNumber = bikeResultSet.getString("bike_number");
+                }
+
+                PendingList pendingList = new PendingList(serviceDate, serviceDescription, bikeId, bikeModel, bikeNumber);
+                list.add(pendingList);
+            }
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            String json = objectMapper.writeValueAsString(list);
+            System.out.println(json);
+            return json;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		return null;
+	}
+
+	public String completeDetails(String opt) {
+	    try {
+            List<PendingList> list = new ArrayList<>();
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "sundar");
+
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT service_date, service_description, bike_id FROM service WHERE status = ?");
+            preparedStatement.setString(1, opt);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                String serviceDate = resultSet.getString("service_date");
+                String serviceDescription = resultSet.getString("service_description");
+                int bikeId = resultSet.getInt("bike_id");
+
+                // Fetch bike details using bike_id
+                PreparedStatement bikeStmt = con.prepareStatement("SELECT bike_model, bike_number FROM bike WHERE bike_id = ?");
+                bikeStmt.setInt(1, bikeId);
+                ResultSet bikeResultSet = bikeStmt.executeQuery();
+
+                String bikeModel = "";
+                String bikeNumber = "";
+                if (bikeResultSet.next()) {
+                    bikeModel = bikeResultSet.getString("bike_model");
+                    bikeNumber = bikeResultSet.getString("bike_number");
+                }
+
+                PendingList pendingList = new PendingList(serviceDate, serviceDescription, bikeId, bikeModel, bikeNumber);
+                list.add(pendingList);
+            }
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            String json = objectMapper.writeValueAsString(list);
+            System.out.println(json);
+            return json;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		return null;
+	}
+
+	public String getEmail(String bikeId) {
+try {
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","sys as sysdba","sundar");
+			PreparedStatement preparedStatement=con.prepareStatement("select user_id from bike where bike_id=?");
+			preparedStatement.setString(1, bikeId);
+			ResultSet rs1= preparedStatement.executeQuery();
+			rs1.next();
+			int userId=Integer.parseInt(rs1.getString("user_id"));
+			PreparedStatement preparedStatement2=con.prepareStatement("select email from bikeuser where user_id=?");
+			preparedStatement2.setInt(1, userId);
+			ResultSet rs=preparedStatement2.executeQuery();
+			rs.next();
+			String eString=rs.getString("Email");
+			return eString;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+
 }
