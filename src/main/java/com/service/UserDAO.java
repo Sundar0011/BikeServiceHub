@@ -55,7 +55,7 @@ public class UserDAO {
 	}
 	public boolean insertService(Integer userId, int bikeId, String bikeModel, String bikeNumber, String date, String service) {
 	    try {
-	        String statusString = "pending";
+	        String statusString = "confirm";
 	        Class.forName("oracle.jdbc.driver.OracleDriver");
 	        Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sys as sysdba", "sundar");
 	        String q = "INSERT INTO service (user_id, service_date, service_description, status, bike_id) VALUES (?, TO_DATE(?), ?, ?, ?)";

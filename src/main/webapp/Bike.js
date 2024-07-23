@@ -5,6 +5,7 @@ const bikeNo=document.getElementById("bike-no");
 const bikeIdInput = document.getElementById("bike-id");
 const bikeModelInput = document.getElementById("bike-model");
 const bikeNumberInput = document.getElementById("bike-number");
+const service=document.getElementById("service-info");
 document.addEventListener('DOMContentLoaded', () => {
     fetch('BikeServlet', {
         method: 'POST',
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="b-id">${bike.bikeId}</p>
                     <p class="b-model">${bike.bikeModel}</p>
                     <p class="b-number">${bike.bikeNumber}</p>
+                    <p class="service-info" id="service-info">wait for comformation</p>
                     <button class="book-btn" onclick="bookService(${bike.bikeId},'${bike.bikeModel}','${bike.bikeNumber}')" id="booking_form">Book Service</button>
                 </div>`;
         });
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error fetching bike data:', error);
     });
 });
+
 
 function addBike() {
 	bikeList.style.display='none';
@@ -52,7 +55,9 @@ function bookService(bikeId,bikeModel,bikeNumber) {
 	serviceForm.style.display='block';
     console.log('Booking service for bike ID:', bikeModel);
 }
-
-function booking_form(){
-	
+function bookAlert(){
+	alert("Check your mail for conformation.");
 }
+
+
+   

@@ -1,11 +1,7 @@
-
-.bike-card{
-    margin: 10px 50px;
-    padding: 10px 20px 10px 20px;
-    background-color: rgb(217, 231, 244);
-    display: flex;
-    justify-content: space-between;
+body{
+	
 }
+
 .pending-list{
     display: none;
 }
@@ -14,4 +10,75 @@
 }
 .complete-list{
     display: none;
+}
+.comfirm-list{
+    display: none;
+}
+
+.title{
+    display: inline;
+    color: rgb(61, 37, 9);
+    font-family:Georgia, 'Times New Roman', Times, serif Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 32px;
+    font-weight: bolder;
+}
+.logo{
+    
+}
+.title-container{
+	padding: 0px;
+}
+#home-btn{
+    color: rgb(0, 0, 255);
+}
+#confirm-btn{
+    color: rgb(115, 113, 113);
+}
+.bike-card{
+	background-color:  rgb(27, 2, 63);
+    margin: 10px 50px;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid rgba(27, 2, 63, 0.77);
+    border-radius: 10px;
+}
+.book-btn{
+	background-color: rgb(255, 128, 0);
+	padding: 0px 10px;
+    color:rgb(255, 255, 255);
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 150px;
+}
+.book-btn:hover{
+    color:orange;
+    background-color: orange;
+    background-color:rgb(255, 255, 255);
+    
+   
+}
+.list-container{
+    display: none;
+	overflow: scroll;
+	overflow-x: hidden;
+    height: 75vh;
+   margin:1% 10% 0% 10%;
+   border-radius: 10px;
+   background-color: rgba(105, 39, 172, 0.473);
+   border: 1px solid rgba(2, 2, 66, 0.515);
+}
+.main-content{
+    margin-top: 2%;
+    text-align: center;
+    font-size:44px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+.body-content{
+ text-align: center;
+ margin: 2% 10% 0% 10%;
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ font-weight: 500;
 }

@@ -1,23 +1,23 @@
 package com.service;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class AddBikeServlet
+ * Servlet implementation class ConfirmServlet
  */
-public class AddBikeServlet extends HttpServlet {
+public class ConfirmServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddBikeServlet() {
+    public ConfirmServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,17 +36,13 @@ public class AddBikeServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		Integer id=(Integer) session.getAttribute("userId");
-		String bike_model=request.getParameter("bike_model");
-		String bike_number=request.getParameter("bike_number");
-		
 		UserDAO userDAO=new UserDAO();
-		if(userDAO.insertBike(id,bike_model,bike_number))
-		{
-			response.sendRedirect("Bike.html");
-		}
-			
+		String bikelist=userDAO.pendingDetails("confirm");
+		 response.setContentType("application/json");
+	        response.setCharacterEncoding("UTF-8");
+	        PrintWriter out = response.getWriter();
+	        out.print(bikelist);
+	        out.flush();
 	}
 
 }

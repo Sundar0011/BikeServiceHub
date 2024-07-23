@@ -1,0 +1,73 @@
+
+
+.title{
+    display: inline;
+    margin-top: 100px;
+    color: rgb(61, 37, 9);
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 44px;
+    font-weight: bolder;
+}
+.logo{
+    margin-top: -20px;
+   
+    text-align: center;
+    display: inline;
+    text-align: center;
+}
+.title-container{
+    padding: 10px;
+    text-align: center;
+}
+.welcome-container{
+   
+   margin-top: 5%;
+   margin-left: 35%;
+   margin-right: 5%;
+}
+.welcome-img{
+    margin-left: 2%;
+    position: absolute;
+    display: inline;
+}
+.welcome-content{
+    display: inline;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    text-align: justify;
+    font-weight: 900;
+}
+.main-content{
+    text-align:justify;
+    color: rgb(29, 11, 133);
+    font-size: 38px;
+    font-weight: 900;
+}
+.admin-btn{
+    font-weight: 500;
+    margin-top: 5%;
+    width: 150px;
+    background-color:rgb(29, 11, 133);;
+    border-radius: 25px;
+    color: aqua;
+    border-color: blue;
+    transition: 0.2s width;
+}
+.admin-btn:hover{
+    width: 160px;
+}
+.user-btn{
+    font-weight: 500;
+    width: 150px;
+    background-color: aqua;
+    border-radius: 25px;
+    color: rgb(29, 11, 133);
+    border-color: blue;
+    margin-left: 2%;
+    transition: 0.2s width;
+}
+.user-btn:hover{
+    width: 160px;
+}

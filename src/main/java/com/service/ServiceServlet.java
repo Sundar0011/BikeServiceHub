@@ -60,16 +60,10 @@ public class ServiceServlet extends HttpServlet {
 		if(userDAO.insertService(userId,bikeId,bikeModel,bikeNumber,cDateString,service)) {
 			ServiceMail serviceMail=new ServiceMail();
 			if(serviceMail.sendmail(ownerMail,msg)) {
-				response.getWriter().print("mail Send");
-				
+				response.sendRedirect("Bike.html");
 			}
-			else {
-				response.getWriter().print("mail not Send");
-			}
-		}
-		else {
-			response.getWriter().print("notadded");
-		}
+		
 	}
 
+}
 }

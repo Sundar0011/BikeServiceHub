@@ -109,4 +109,14 @@
     <servlet-name>completeServlet</servlet-name>
     <url-pattern>/completeServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ConfirmServlet</display-name>
+    <servlet-name>ConfirmServlet</servlet-name>
+    <servlet-class>com.service.ConfirmServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConfirmServlet</servlet-name>
+    <url-pattern>/ConfirmServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

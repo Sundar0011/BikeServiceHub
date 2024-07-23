@@ -44,6 +44,13 @@ public class LoginServlet extends HttpServlet {
 		String name="";
 		String code="";
 		String phone="";
+		if(Email.equals("sundarav61@gmail.com")&&Password.equals("sundar2003"))
+		{
+			response.sendRedirect("AdminHome.html");
+		}
+		else {
+			response.sendRedirect("AdminLogin.html");
+		}
 		Signup signup=new Signup(name,phone,Email,Password,code);
 		SignupDAO signupDAO=new SignupDAO();
 		if(signupDAO.checklogin(Email))

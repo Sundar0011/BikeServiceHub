@@ -1,12 +1,27 @@
 const pendingList = document.getElementById("pending-list");
 const readyList= document.getElementById("ready-list")
 const completeList=document.getElementById("complete-list");
+const confirmList=document.getElementById("confirm-list");
+const homeBtn=document.getElementById("home-btn");
+const confirmBtn=document.getElementById("confirm-btn");
+const pendingBtn=document.getElementById("pending-btn");
+const deliveryBtn=document.getElementById("delivery-btn");
+const completeBtn=document.getElementById("complete-btn");
+const listContainer=document.getElementById("list-container");
+const homeContent=document.getElementById("home-content");
 function pending(){
-    readyList.style.display='none';
+    listContainer.style.display='block';
+    homeContent.style.display='none';
+    homeBtn.style.color='rgb(115, 113, 113)';
+    confirmBtn.style.color='rgb(115, 113, 113)';
+    completeBtn.style.color='rgb(115, 113, 113)';
+    deliveryBtn.style.color='rgb(115, 113, 113)';
+    pendingBtn.style.color=' rgb(0, 0, 255)';
+    confirmList.style.display='none';
     completeList.style.display='none';
+    readyList.style.display='none';
     pendingList.style.display='block';
-    console.log("pending function");
-    readyList.innerHTML="";
+    pendingList.innerHTML="";
     fetch('pendingServlet', {
         method: 'POST',
         headers: {
@@ -23,7 +38,7 @@ function pending(){
                     <p class="b-number">${list.bikeNumber}</p>
                     <p class="b-id">${list.serviceDate}</p>
                     <p class="b-model">${list.serviceDescription}</p>
-                    <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'Delivery')" id="booking_form">Ready for Delivery</button>
+                    <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'Delivery')" id="booking_form">Confirm Delivered</button>
                    
                 </div>`;
         });
@@ -60,16 +75,32 @@ function changeToDelivery(bikeId, status) {
     });
     if(status=="Delivery"){
     alert("Ready to delivery");
-    ready();
+    pending();
     }
     else if(status=="Deliverd"){
 		alert("Bike Deliverd");
-		complete();
+		ready();
 		}
-    
+	else if(status=="pending")
+	{
+		alert("Confirm slot");
+		confirm();
+	}	
+	else if(status=="cancel"){
+		alert("Cancel Booking");
+		confirm();
+	}
+	
 }
 function ready(){
-   
+    homeContent.style.display='none';
+    listContainer.style.display='block';
+    homeBtn.style.color='rgb(115, 113, 113)';
+    confirmBtn.style.color='rgb(115, 113, 113)';
+    completeBtn.style.color='rgb(115, 113, 113)';
+    pendingBtn.style.color='rgb(115, 113, 113)';
+    deliveryBtn.style.color='Blue';
+    confirmList.style.display='none';
     completeList.style.display='none';
     pendingList.style.display='none';
     readyList.style.display='block';
@@ -100,6 +131,14 @@ function ready(){
     });
 }
 function complete(){
+    homeContent.style.display='none';
+    listContainer.style.display='block';
+    homeBtn.style.color='rgb(115, 113, 113)';
+    confirmBtn.style.color='rgb(115, 113, 113)';
+    pendingBtn.style.color='rgb(115, 113, 113)';
+    deliveryBtn.style.color='rgb(115, 113, 113)';
+    completeBtn.style.color=' rgb(0, 0, 255)';
+    confirmList.style.display='none';
     readyList.style.display='none';
     pendingList.style.display='none';
     completeList.style.display='block';
@@ -121,7 +160,6 @@ function complete(){
                     <p class="b-id">${list.serviceDate}</p>
                     <p class="b-model">${list.serviceDescription}</p>
                     <button class="book-btn"  id="booking_form">deliverd</button>
-                   
                 </div>`;
         });
     })
@@ -130,8 +168,56 @@ function complete(){
     });
 }
 function home(){
+    homeContent.style.display='block';
+    listContainer.style.display='none';
+    confirmBtn.style.color='rgb(115, 113, 113)';
+    pendingBtn.style.color='rgb(115, 113, 113)';
+    deliveryBtn.style.color='rgb(115, 113, 113)';
+    completeBtn.style.color='rgb(115, 113, 113)';
+    homeBtn.style.color=' rgb(0, 0, 255)';
+    confirmList.style.display='none';
     readyList.style.display='none';
     pendingList.style.display='none';
     completeList.style.display='none';
 }
 
+function confirm(){
+    homeContent.style.display='none';
+    listContainer.style.display='block';
+    homeBtn.style.color='rgb(115, 113, 113)';
+    pendingBtn.style.color='rgb(115, 113, 113)';
+    deliveryBtn.style.color='rgb(115, 113, 113)';
+    completeBtn.style.color='rgb(115, 113, 113)';
+    confirmBtn.style.color=' rgb(0, 0, 255)';
+    readyList.style.display='none';
+    pendingList.style.display='none';
+    completeList.style.display='none';
+    confirmList.style.display='block';
+    confirmList.innerHTML="";
+    fetch('ConfirmServlet', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(list => {
+            confirmList.innerHTML += `
+                <div class="bike-card">
+                	<p class="b-number">${list.bikeId}</p>
+                    <p class="b-number">${list.bikeModel}</p>
+                    <p class="b-number">${list.bikeNumber}</p>
+                    <p class="b-id">${list.serviceDate}</p>
+                    <p class="b-model">${list.serviceDescription}</p>
+                    <button class="book-btn"  id="booking_form" onclick="changeToDelivery(${list.bikeId},'cancel')">cancel</button>
+                   <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'pending')" id="booking_form">confirm</button>
+                   
+                </div>`;
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching bike data:', error);
+    });
+
+}

@@ -3,79 +3,96 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="./AdminHome.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    
-
-    <title>Document</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./AdminHome.css">
+  <link rel="shortcut icon" href="./image/WhatsApp_Image_2024-07-22_at_22.10.07_a7d02c26-removebg-preview.png"
+    type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <title>Bike Service Hub</title>
 </head>
 
-<body>
+<body style="background-color: rgb(255, 255, 255);">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
 
-        <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
 
-            <span class="navbar-toggler-icon"></span>
+      </button>
 
-          </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-
-            <a class="navbar-brand" href="#">Bike Service Hub</a>
-
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-              <li class="nav-item">
-
-                <a class="nav-link active" aria-current="page" href="#" onclick="home()">Home</a>
-
-              </li>
-
-              <li class="nav-item">
-
-                <a class="nav-link" href="#" onclick="pending()">Pending</a>
-
-              </li>
-
-              <li class="nav-item">
-
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" onclick="ready()">Ready to Delivery</a>
-
-              </li>
-              <li class="nav-item">
-
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" onclick="complete()" >Completed</a>
-
-              </li>
-
-            </ul>
-
-			<button class="btn btn-outline-success" onclick="addBike()" id="book-btn">+ Bike</button>
-
+        <a class="navbar-brand" href="#">
+          <div class="title-container">
+            <img style="width: 80px;" class="logo"
+              src="./image/WhatsApp_Image_2024-07-22_at_22.10.07_a7d02c26-removebg-preview.png" alt="">
+            <p class="title">Bike Service Hub</p>
           </div>
+        </a>
 
-        </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-      </nav>
+          <li class="nav-item">
 
-  <div>
+            <a id="home-btn" class="nav-link active" aria-current="page" href="#" onclick="home()">Home</a>
+
+          </li>
+          <li class="nav-item">
+
+            <a id="confirm-btn" class="nav-link active" aria-current="page" href="#" onclick="confirm()">Confirm</a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a id="pending-btn" class="nav-link" href="#" onclick="pending()">Pending</a>
+
+          </li>
+
+          <li class="nav-item">
+
+            <a id="delivery-btn" class="nav-link" href="#" tabindex="-1" aria-disabled="true" onclick="ready()">Ready to
+              Delivery</a>
+
+          </li>
+          <li class="nav-item">
+
+            <a id="complete-btn" class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+              onclick="complete()">Completed</a>
+
+          </li>
+
+        </ul>
+
+
+      </div>
+
+    </div>
+
+  </nav>
+  <div id="home-content">
+      <p class="main-content">Welcome to the BikeHub Admin Dashboard!</p>
+      <p class="body-content">As an administrator, you can manage the various aspects of the BikeHub application. Use the navigation links to access different sections of the admin portal.</p>
+
+  </div>
+  <div class="list-container" id="list-container">
+
+    <div class="comfirm-list" id="confirm-list">Comfirm
+
+    </div>
 
     <div class="pending-list" id="pending-list">
 
-        <h1>Pending</h1>
+      <h1>Pending</h1>
     </div>
     <div class="ready-list" id="ready-list">
       <h1>ready</h1>
@@ -86,8 +103,8 @@
 
     </div>
 
-
-<script src="./AdminHome.js"></script>
+  </div>
+  <script src="./AdminHome.js"></script>
 </body>
 
-</html
+</html>

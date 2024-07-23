@@ -1,6 +1,4 @@
-.bike-container{
 
-}
 .bike-card{
     margin: 10px 50px;
     padding: 10px 20px 10px 20px;
@@ -8,15 +6,7 @@
     display: flex;
     justify-content: space-between;
 }
-.b-id{
-    
-}
-.b-model{
-    
-}
-.b-number{
 
-}
 .book-btn{
     height: 40px;
     border-radius: 5px;
@@ -51,3 +41,7 @@
 .form-check{
     margin-top: 20px;
 }
+.service-info{
+	display:'none';
+}
+

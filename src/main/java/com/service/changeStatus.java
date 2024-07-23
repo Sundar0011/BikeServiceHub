@@ -55,6 +55,21 @@ public class changeStatus extends HttpServlet {
 			serviceMail.sendmail(email, Msg);
 			System.out.println("mail Send");
 		}
+		if(status.equals("pending")) {
+			String email=userDAO.getEmail(bikeId);
+			ServiceMail serviceMail=new ServiceMail();
+			String Msg="Your slot is confirm.";
+			serviceMail.sendmail(email, Msg);
+			
+			System.out.println("confirm mail send");
+		}
+		if(status.equals("cancel")) {
+			String email=userDAO.getEmail(bikeId);
+			ServiceMail serviceMail=new ServiceMail();
+			String Msg="Sorry Slot was not available at this date. so select another date";
+			serviceMail.sendmail(email, Msg);
+		
+		}
 				
 	}
 
