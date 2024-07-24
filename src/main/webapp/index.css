@@ -1,11 +1,24 @@
 
+:root {
+    /*--color-background: #f4f4f4;  Light gray background */
+    --color-button: #36c2ce; /* Vibrant blue-green button */
+    --color-button-hover: #2a9ba7; /* Slightly darker for hover effect */
+    --color-text: #474747; /* Dark gray text */
+    --color-card: #e0f7fa; /* Light blue card background */
+    --color-card-text: #353593; /* Dark blue text for cards */
+    --color-background: #264653; /* Dark blue-green */
+    --color-primary: #E76F51; /* Red-orange */
+    --color-secondary: #F4A261; /* Light orange */
+    --color-accent: #2A9D8F; /* Teal */
+    --color-highlight: #E9C46A; /* Yellow */
 
+}
 .title{
     display: inline;
     margin-top: 100px;
-    color: rgb(61, 37, 9);
+    color: var(--color-highlight);
     text-align: center;
-    font-family:Georgia, 'Times New Roman', Times, serif Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 44px;
     font-weight: bolder;
 }
@@ -20,54 +33,61 @@
     padding: 10px;
     text-align: center;
 }
-.welcome-container{
-   
-   margin-top: 5%;
-   margin-left: 35%;
-   margin-right: 5%;
-}
-.welcome-img{
-    margin-left: 2%;
-    position: absolute;
-    display: inline;
-}
-.welcome-content{
-    display: inline;
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 22px;
-    text-align: justify;
-    font-weight: 900;
-}
-.main-content{
-    text-align:justify;
-    color: rgb(29, 11, 133);
-    font-size: 38px;
-    font-weight: 900;
-}
+ .home-content{
+        display: flex;
+        justify-content: center;
+    }
+    .welcome-content{
+        padding-right:40px ;
+        margin-top: 100px;
+    }
+    .body-content{
+        color:white;
+         text-align: start;
+         margin: 2% 10% 0% 0%;
+         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+         font-weight: 500;
+        }
+        .main-content{
+            color: var(--color-accent);
+            margin-top: 5%;
+            text-align: start;
+            font-size:44px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 600;
+        }
+       
 .admin-btn{
     font-weight: 500;
     margin-top: 5%;
     width: 150px;
-    background-color:rgb(29, 11, 133);;
+    background-color:var(--color-button);
     border-radius: 25px;
-    color: aqua;
-    border-color: blue;
+    border-color: var(--color-accent);
     transition: 0.2s width;
 }
 .admin-btn:hover{
     width: 160px;
+    background-color: var(--color-button-hover);
 }
 .user-btn{
     font-weight: 500;
     width: 150px;
-    background-color: aqua;
+    background-color:var(--color-button);
     border-radius: 25px;
-    color: rgb(29, 11, 133);
-    border-color: blue;
+    color: var(+);
+    
     margin-left: 2%;
     transition: 0.2s width;
 }
 .user-btn:hover{
     width: 160px;
+    background-color: var(--color-button-hover);
 }
+
+
+
+
+
+
+

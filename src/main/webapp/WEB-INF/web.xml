@@ -119,4 +119,24 @@
     <servlet-name>ConfirmServlet</servlet-name>
     <url-pattern>/ConfirmServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminLogin</display-name>
+    <servlet-name>AdminLogin</servlet-name>
+    <servlet-class>com.service.AdminLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminLogin</servlet-name>
+    <url-pattern>/AdminLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>removeBikeServlet</display-name>
+    <servlet-name>removeBikeServlet</servlet-name>
+    <servlet-class>com.service.removeBikeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>removeBikeServlet</servlet-name>
+    <url-pattern>/removeBikeServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -49,7 +49,7 @@ public class SignupDAO {
 		return result;
 	}
 
-	public boolean checklogin(String email) {
+	public boolean checklogin(String email,String password) {
 		try {
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -60,7 +60,8 @@ public class SignupDAO {
 			{
 				
 				String e=rs.getString("Email");
-				if(e.equals(email))
+				String pass=rs.getString("Password");
+				if(e.equals(email)&&pass.equals(password))
 				{
 					return true;
 				}

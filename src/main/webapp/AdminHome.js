@@ -12,11 +12,11 @@ const homeContent=document.getElementById("home-content");
 function pending(){
     listContainer.style.display='block';
     homeContent.style.display='none';
-    homeBtn.style.color='rgb(115, 113, 113)';
-    confirmBtn.style.color='rgb(115, 113, 113)';
-    completeBtn.style.color='rgb(115, 113, 113)';
-    deliveryBtn.style.color='rgb(115, 113, 113)';
-    pendingBtn.style.color=' rgb(0, 0, 255)';
+    homeBtn.style.color='#36c2ce';
+    confirmBtn.style.color='#36c2ce';
+    completeBtn.style.color='#36c2ce';
+    deliveryBtn.style.color='#36c2ce';
+    pendingBtn.style.color=' #264653';
     confirmList.style.display='none';
     completeList.style.display='none';
     readyList.style.display='none';
@@ -32,15 +32,18 @@ function pending(){
     .then(data => {
         data.forEach(list => {
             pendingList.innerHTML += `
-                <div class="bike-card">
-                	<p class="b-number">${list.bikeId}</p>
-                    <p class="b-number">${list.bikeModel}</p>
-                    <p class="b-number">${list.bikeNumber}</p>
-                    <p class="b-id">${list.serviceDate}</p>
-                    <p class="b-model">${list.serviceDescription}</p>
-                    <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'Delivery')" id="booking_form">Confirm Delivered</button>
-                   
-                </div>`;
+                 <div class="card-container">
+    <div class="bike-card">
+        <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
+        <div class="card-body">
+            <h5 class="card-title">Bike Model: ${list.bikeModel}</h5>
+            <p class="card-text">Bike Number: ${list.bikeId}</p>
+            <p class="card-text">Service Date: ${list.serviceDate}</p>
+            <p class="card-text">Service Description: ${list.serviceDescription}</p>
+            <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'Delivery')" id="booking_form">Ready for Delivery</button>
+        </div>
+    </div>
+</div>`;
         });
     })
     .catch(error => {
@@ -95,11 +98,11 @@ function changeToDelivery(bikeId, status) {
 function ready(){
     homeContent.style.display='none';
     listContainer.style.display='block';
-    homeBtn.style.color='rgb(115, 113, 113)';
-    confirmBtn.style.color='rgb(115, 113, 113)';
-    completeBtn.style.color='rgb(115, 113, 113)';
-    pendingBtn.style.color='rgb(115, 113, 113)';
-    deliveryBtn.style.color='Blue';
+    homeBtn.style.color='#36c2ce';
+    confirmBtn.style.color='#36c2ce';
+    completeBtn.style.color='#36c2ce';
+    pendingBtn.style.color='#36c2ce';
+    deliveryBtn.style.color='#264653';
     confirmList.style.display='none';
     completeList.style.display='none';
     pendingList.style.display='none';
@@ -114,16 +117,19 @@ function ready(){
     .then(response => response.json())
     .then(data => {
         data.forEach(list => {
-            readyList.innerHTML += `
-                <div class="bike-card">
-                	<p class="b-number">${list.bikeId}</p>
-                    <p class="b-number">${list.bikeModel}</p>
-                    <p class="b-number">${list.bikeNumber}</p>
-                    <p class="b-id">${list.serviceDate}</p>
-                    <p class="b-model">${list.serviceDescription}</p>
-                    <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'Deliverd')" id="booking_form">Confirm Delivered</button>
-                   
-                </div>`;
+            readyList.innerHTML +=`
+                 <div class="card-container">
+    <div class="bike-card">
+        <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
+        <div class="card-body">
+            <h5 class="card-title">Bike Model: ${list.bikeModel}</h5>
+            <p class="card-text">Bike Number: ${list.bikeId}</p>
+            <p class="card-text">Service Date: ${list.serviceDate}</p>
+            <p class="card-text">Service Description: ${list.serviceDescription}</p>
+            <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'Deliverd')" id="booking_form">Confirm Delivered</button>
+        </div>
+    </div>
+</div>`;
         });
     })
     .catch(error => {
@@ -133,11 +139,11 @@ function ready(){
 function complete(){
     homeContent.style.display='none';
     listContainer.style.display='block';
-    homeBtn.style.color='rgb(115, 113, 113)';
-    confirmBtn.style.color='rgb(115, 113, 113)';
-    pendingBtn.style.color='rgb(115, 113, 113)';
-    deliveryBtn.style.color='rgb(115, 113, 113)';
-    completeBtn.style.color=' rgb(0, 0, 255)';
+    homeBtn.style.color='#36c2ce';
+    confirmBtn.style.color='#36c2ce';
+    pendingBtn.style.color='#36c2ce';
+    deliveryBtn.style.color='#36c2ce';
+    completeBtn.style.color=' #264653';
     confirmList.style.display='none';
     readyList.style.display='none';
     pendingList.style.display='none';
@@ -153,14 +159,18 @@ function complete(){
     .then(data => {
         data.forEach(list => {
             completeList.innerHTML += `
-                <div class="bike-card">
-                	<p class="b-number">${list.bikeId}</p>
-                    <p class="b-number">${list.bikeModel}</p>
-                    <p class="b-number">${list.bikeNumber}</p>
-                    <p class="b-id">${list.serviceDate}</p>
-                    <p class="b-model">${list.serviceDescription}</p>
-                    <button class="book-btn"  id="booking_form">deliverd</button>
-                </div>`;
+                 <div class="card-container">
+    <div class="bike-card">
+        <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
+        <div class="card-body">
+            <h5 class="card-title">Bike Model: ${list.bikeModel}</h5>
+            <p class="card-text">Bike Number: ${list.bikeId}</p>
+            <p class="card-text">Service Date: ${list.serviceDate}</p>
+            <p class="card-text">Service Description: ${list.serviceDescription}</p>
+            
+        </div>
+    </div>
+</div>`;
         });
     })
     .catch(error => {
@@ -168,13 +178,13 @@ function complete(){
     });
 }
 function home(){
-    homeContent.style.display='block';
+    homeContent.style.display='flex';
     listContainer.style.display='none';
-    confirmBtn.style.color='rgb(115, 113, 113)';
-    pendingBtn.style.color='rgb(115, 113, 113)';
-    deliveryBtn.style.color='rgb(115, 113, 113)';
-    completeBtn.style.color='rgb(115, 113, 113)';
-    homeBtn.style.color=' rgb(0, 0, 255)';
+    confirmBtn.style.color='#36c2ce';
+    pendingBtn.style.color='#36c2ce';
+    deliveryBtn.style.color='#36c2ce';
+    completeBtn.style.color='#36c2ce';
+    homeBtn.style.color='#264653';
     confirmList.style.display='none';
     readyList.style.display='none';
     pendingList.style.display='none';
@@ -184,11 +194,11 @@ function home(){
 function confirm(){
     homeContent.style.display='none';
     listContainer.style.display='block';
-    homeBtn.style.color='rgb(115, 113, 113)';
-    pendingBtn.style.color='rgb(115, 113, 113)';
-    deliveryBtn.style.color='rgb(115, 113, 113)';
-    completeBtn.style.color='rgb(115, 113, 113)';
-    confirmBtn.style.color=' rgb(0, 0, 255)';
+    homeBtn.style.color='#36c2ce';
+    pendingBtn.style.color='#36c2ce';
+    deliveryBtn.style.color='#36c2ce';
+    completeBtn.style.color='#36c2ce';
+    confirmBtn.style.color='#264653';
     readyList.style.display='none';
     pendingList.style.display='none';
     completeList.style.display='none';
@@ -204,16 +214,18 @@ function confirm(){
     .then(data => {
         data.forEach(list => {
             confirmList.innerHTML += `
-                <div class="bike-card">
-                	<p class="b-number">${list.bikeId}</p>
-                    <p class="b-number">${list.bikeModel}</p>
-                    <p class="b-number">${list.bikeNumber}</p>
-                    <p class="b-id">${list.serviceDate}</p>
-                    <p class="b-model">${list.serviceDescription}</p>
-                    <button class="book-btn"  id="booking_form" onclick="changeToDelivery(${list.bikeId},'cancel')">cancel</button>
-                   <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'pending')" id="booking_form">confirm</button>
-                   
-                </div>`;
+                 <div class="card-container">
+    <div class="bike-card">
+        <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
+        <div class="card-body">
+            <h5 class="card-title">Bike Model: ${list.bikeModel}</h5>
+            <p class="card-text">Bike Number: ${list.bikeId}</p>
+            <p class="card-text">Service Date: ${list.serviceDate}</p>
+            <p class="card-text">Service Description: ${list.serviceDescription}</p>
+        
+        </div>
+    </div>
+</div>`;
         });
     })
     .catch(error => {

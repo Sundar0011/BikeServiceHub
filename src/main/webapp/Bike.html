@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #264653;">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -34,8 +34,11 @@
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-            <a class="navbar-brand" href="#">Bike Service Hub</a>
-
+            <div class="title-container">
+             
+              
+              <p class="title">Bike Service Hub</p>
+            </div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
               <li class="nav-item">
@@ -58,7 +61,10 @@
 
             </ul>
 
-			<button class="btn btn-outline-success" onclick="addBike()" id="book-btn">+ Bike</button>
+			<button class="btn btn-outline-success m-2" onclick="addBike()" id="book-btn" >+ Bike</button>
+			<a href="index.html">
+				<button class="btn btn-outline-success" id="book-btn">logout</button>
+			</a> 
 
           </div>
 
@@ -93,7 +99,7 @@
 
         
 
-                <input type="submit" value="AddBike" >
+                <input type="submit" class="add-btn" value="AddBike" >
 
                 <button class="cancel-btn" id="cancel-btn" onclick="cancel()">cancel</button>
 
@@ -111,19 +117,21 @@
 	<input type="hidden" name="bikeModel" id="bike-model" name="bikeModel">
 	<input type="hidden" name="bikeNumber" id="bike-number" name="bikeNumber">
     <input type="date" placeholder="date" style="width: 250px;height: 43px;margin-top: 30px;border-radius: 5px;" name="date">
-	<select class="form-select" aria-label="Default select example" name="service">
+	<select class="form-select" aria-label="Default select example" name="service" style="margin-top: 10px;height: 43px; border-color: rgb(69, 53, 193);">
 	  <option selected>Select Service</option>
 	  <option value="Oil Service">Oil Service</option>
 	  <option value="Water service">Water Service</option>
 	  <option value="Fullservice">full service</option>
 	</select>
     <br>
-    <input type="submit" value="submit" onclick="bookAlert();"  >
+    <input type="submit" class="submit-btn" value="submit" onclick="bookAlert();"  >
 </form>
 
 </div>
 </center>
-
+  <footer style="background-color: #33949d; color: #f4f4f4; text-align: center; padding: 1px; position: fixed; width: 100%; bottom: 0;">
+    <p>&copy; 2024 Bike Service Hub. All rights reserved.</p>
+</footer>
 <script src="./Bike.js"></script>
 </body>
 

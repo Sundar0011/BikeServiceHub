@@ -1,5 +1,14 @@
-body{
-	
+:root {
+    /*--color-background: #f4f4f4;  Light gray background */
+    --color-button: #36c2ce; /* Vibrant blue-green button */
+    --color-button-hover: #2a9ba7; /* Slightly darker for hover effect */
+    --color-text: #474747; /* Dark gray text */
+    --color-card: #e0f7fa; /* Light blue card background */
+    --color-card-text: #353593; /* Dark blue text for cards */
+    --color-background: #264653; /* Dark blue-green */
+    --color-accent: #2A9D8F; /* Teal */
+   
+
 }
 
 .pending-list{
@@ -17,7 +26,7 @@ body{
 
 .title{
     display: inline;
-    color: rgb(61, 37, 9);
+    color: var(--color-highlight);
     font-family:Georgia, 'Times New Roman', Times, serif Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 32px;
     font-weight: bolder;
@@ -29,15 +38,17 @@ body{
 	padding: 0px;
 }
 #home-btn{
-    color: rgb(0, 0, 255);
+    color: var(--color-button);
+    
 }
 #confirm-btn{
-    color: rgb(115, 113, 113);
+    color: var(--color-text);
+    
 }
 .bike-card{
-	background-color:  rgb(27, 2, 63);
+	background-color:  var(--color-card);
     margin: 10px 50px;
-    color: white;
+    color: var(--color-text);
     padding: 10px 20px 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -45,40 +56,57 @@ body{
     border-radius: 10px;
 }
 .book-btn{
-	background-color: rgb(255, 128, 0);
+	display: inline;
+	background-color: var(--color-button);
 	padding: 0px 10px;
-    color:rgb(255, 255, 255);
-    border: 2px solid black;
+    color:var(--color-text);
+    border: 2px solid ;
     border-radius: 10px;
     width: 150px;
 }
 .book-btn:hover{
-    color:orange;
-    background-color: orange;
-    background-color:rgb(255, 255, 255);
     
-   
+    background-color:var(--color-button-hover);
 }
 .list-container{
     display: none;
-	overflow: scroll;
-	overflow-x: hidden;
-    height: 75vh;
-   margin:1% 10% 0% 10%;
+    height: 70vh;
+   margin:5% 10% 0% 10%;
    border-radius: 10px;
-   background-color: rgba(105, 39, 172, 0.473);
-   border: 1px solid rgba(2, 2, 66, 0.515);
+
+
 }
 .main-content{
-    margin-top: 2%;
-    text-align: center;
+    color: var(--color-accent);
+    margin-top: 5%;
+    text-align: start;
     font-size:44px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
 }
 .body-content{
- text-align: center;
- margin: 2% 10% 0% 10%;
+color:white;
+ text-align: start;
+ margin: 2% 10% 0% 0%;
  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  font-weight: 500;
+}
+.bikeImg{
+	width: 220px;
+	height:300px;
+	border-radius: 10px;
+	margin-right: 50px;
+}
+.admin-img{
+
+ 
+}
+
+.home-content{
+    display: flex;
+    justify-content: center;
+}
+.welcome-content{
+	padding-right:40px ;
+    margin-top: 100px;
 }

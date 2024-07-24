@@ -1,28 +1,49 @@
 
+    :root {
+        /*--color-background: #f4f4f4;  Light gray background */
+        --color-button: #36c2ce; /* Vibrant blue-green button */
+        --color-button-hover: #2a9ba7; /* Slightly darker for hover effect */
+        --color-text: #474747; /* Dark gray text */
+        --color-card: #e0f7fa; /* Light blue card background */
+        --color-card-text: #353593; /* Dark blue text for cards */
+        --color-background: #264653; /* Dark blue-green */
+        --color-primary: #E76F51; /* Red-orange */
+        --color-secondary: #F4A261; /* Light orange */
+        --color-accent: #2A9D8F; /* Teal */
+        --color-highlight: #E9C46A; /* Yellow */
+    
+    }
 .bike-card{
     margin: 10px 50px;
     padding: 10px 20px 10px 20px;
-    background-color: rgb(217, 231, 244);
     display: flex;
+    border-radius: 5px;
     justify-content: space-between;
+    background-color: var(--color-card);
 }
 
 .book-btn{
     height: 40px;
     border-radius: 5px;
+    background-color: var(--color-button);
+}
+.book-btn:hover{
+	background-color: var(--color-button-hover);
 }
 .card-container{
-    display: none;
-   
+  display:none ;
 }
 .card{
+    color: var(--color-card-text);
     margin-top: 50px;
     text-align: center;
     padding: 25px;
     width: 300px;
-    border: 2px solid black;
-    background-color: rgb(164, 168, 171);
-   
+    background-color: var(--color-card);
+}
+input{
+    border-radius: 5px;
+    border-color: var(--color-button-hover);
 }
 .service-container{
    display: flex;
@@ -30,11 +51,12 @@
    display: none;
 }
 .service-form{
+    margin-top: 100px;
     border-radius: 10px;
-    background-color: rgb(241, 245, 249);
+    background-color: var(--color-card);
     text-align: center;
-    padding: 20px;
-    border: 1px solid black;
+    padding: 25px;
+   
     width: 300px;
     height: 400px;
 }
@@ -42,6 +64,43 @@
     margin-top: 20px;
 }
 .service-info{
-	display:'none';
+	display:'';
 }
 
+.title{
+    display: inline;
+    color: var(--color-background);
+    font-family:Georgia, 'Times New Roman', Times, serif Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 32px;
+    font-weight: bolder;
+    margin-right: 20px;
+}
+.title-container{
+	padding: 0px;
+}
+.cancel-btn{
+    color: var(--color-text);
+    margin-left: 10px;
+    border-radius: 5px;
+    width: 90px;
+    background-color: var(--color-button);
+}
+.cancel-btn:hover{
+    background-color: var(--color-button-hover);
+}
+.add-btn{
+    color: var(--color-text);
+    margin-left: 10px;
+    border-radius: 5px;
+    width: 90px;
+    background-color: var(--color-button);
+}
+.add-btn:hover{
+    background-color: var(--color-button-hover);
+}
+.submit-btn{
+    background-color:var(--color-button) ;
+}
+.submit-btn:hover{
+    background-color: var(--color-button-hover);
+}

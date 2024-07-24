@@ -1,4 +1,4 @@
-@charset "UTF-8";
+   
 .card-container{
     display: none;
    
@@ -8,10 +8,32 @@
     text-align: center;
     padding: 25px;
     width: 300px;
-    border: 2px solid black;
+    border: 2px solid;
     background-color: rgb(164, 168, 171);
    
 }
 .book-btn{
 	display: block;
+}
+.main-content{
+    text-align: center;
+    font-size: 38px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 900;
+    margin-top: 10%;
+}
+.body-content{
+    padding: 5% 20% 5% 20%;
+    font-size: 22px;
+}
+.btn{
+    text-decoration:none;
+    color: green;
+}
+.title{
+    display: inline;
+    color: rgb(61, 37, 9);
+    font-family:Georgia, 'Times New Roman', Times, serif Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 32px;
+    font-weight: bolder;
 }

@@ -6,18 +6,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class AdminLogin
  */
-public class LoginServlet extends HttpServlet {
+public class AdminLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public AdminLogin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,28 +35,16 @@ public class LoginServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-		
+		System.out.println("Admin Login");
 		String Email=request.getParameter("Email");
 		String Password=request.getParameter("Password");
-		String name="";
-		String code="";
-		String phone="";
-		System.out.println(Email+Password);
-		Signup signup=new Signup(name,phone,Email,Password,code);
-		SignupDAO signupDAO=new SignupDAO();
-		if(signupDAO.checklogin(Email,Password))
+		if(Email.equals("sundarav61@gmail.com")&&Password.equals("sundar2003"))
 		{
-			int id=signupDAO.fecthUserId(Email);
-			System.out.println(id);
-			HttpSession session=request.getSession();
-			session.setAttribute("userId",id);
-			response.sendRedirect("Bike.html");
+		
+			response.sendRedirect("AdminHome.html");
 		}
-		else
-		{
-			response.sendRedirect("UserLogin.html");
+		else {
+			response.sendRedirect("AdminLogin.html");
 		}
 	}
 

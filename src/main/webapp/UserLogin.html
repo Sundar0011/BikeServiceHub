@@ -3,19 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./UserLogin.css">
+    <title>BikeServiceHub</title>
+    <link rel="shortcut icon" href="./image/Black_And_White_Professional_Concept_Design_Workshop_And_Modification_Logo-removebg-preview.png" type="image/x-icon">
+<link rel="stylesheet" href="./UserLogin.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="./image/Black_And_White_Professional_Concept_Design_Workshop_And_Modification_Logo-removebg-preview.png" type="image/x-icon">
 
     <title>Bike Service hub</title>
 </head>
-<body style="background-color: rgba(240, 241, 243, 0.297);">
-    <h1 class="main-title">Bike Service Hub</h1>
+<body style="background-color: #264653">
+  <div class="title-container">
+    <img style="width: 80px;" class="logo" src="./image/WhatsApp_Image_2024-07-22_at_22.10.07_a7d02c26-removebg-preview.png" alt="">
+    <p class="title">Bike Service Hub</p>
+</div>
+<p class="welcome-content" id="welcome-content">
+  Welcome to Bike Service Hub! Please log in to access our services.</p>
+  <center>
 	<div class="btn-container" id="btn-container">
+    
 	<button class="login-btn" onclick="login()">Login</button>
 	<button class="signup-btn" onclick="signup()">Signup</button>
     </div> 
-    
+	</center>
     <div class="card-container">
         <center>
         <div class="login-card" id="login-card">
@@ -23,18 +35,15 @@
             <form action="LoginServlet" method="post">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email" required>
                   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" name="Password">
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="Password" required>
                 </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <input class="btn btn-primary" type="submit" value="LoginServlet" />
+                <input class="btn btn-primary" type="submit" value="Login" />
+                <input class="btn btn-primary" type="submit" onclick="cancel()" value="cancel" id="button-2"/>
               </form>
             </div>
         </div>
@@ -44,35 +53,29 @@
                 <div class="mb-3">
                  
                  <label class="form-label">Name</label>
-                 <input type="text" class="form-control" aria-label="First name" name="name">
+                 <input type="text" class="form-control" aria-label="First name" name="name" required>
                  <label class="form-label">Phone</label>
-                 <input type="text" class="form-control" aria-label="phone" name="phone">
+                 <input type="text" class="form-control" aria-label="phone" name="phone" required>
  
                   <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required/>
                   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
                 </div>
                 <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-                
-                <input class="btn btn-primary" type="submit" value="signupServlet" onclick="otp()"/>
+              
+                <input class="btn btn-primary" type="submit" value="signup"/>
+                <input class="btn btn-primary" type="submit" onclick="cancel()" value="cancel" id="button-2"/>
             </form>
         </div>
         </div>
-        <div class="otp-card" id="otp-card">
-            <form action="otpServlet" method="post">
-                <div class="mb-3">
-                 <label class="form-label">Enter otp</label>
-                 <input type="text" class="form-control" aria-label="First name" name="vcode">
-                 <input class="btn btn-primary" type="submit" value="otpServlet" id="button-1" />
-            </form>
-        </div>
+  
     </center>
     </div>
     <script src="./UserLogin.js"></script>

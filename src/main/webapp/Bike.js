@@ -15,23 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(response => response.json())
     .then(data => {
-        data.forEach(bike => {
+        data.forEach(list => {
             bikeList.innerHTML += `
-                <div class="bike-card">
-                    <p class="b-id">${bike.bikeId}</p>
-                    <p class="b-model">${bike.bikeModel}</p>
-                    <p class="b-number">${bike.bikeNumber}</p>
-                    <p class="service-info" id="service-info">wait for comformation</p>
-                    <button class="book-btn" onclick="bookService(${bike.bikeId},'${bike.bikeModel}','${bike.bikeNumber}')" id="booking_form">Book Service</button>
-                </div>`;
+                 <div class="card-container">
+    <div class="bike-card">
+        <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
+        <div class="card-body">
+            <h5 class="card-title">Bike Model: ${bike.bikeModel}</h5>
+            <p class="card-text">Bike Number: ${bike.bikeId}</p>
+            <button class="book-btn" onclick="removeBike(${bike.bikeId})" id="booking_form">RemoveBike</button>
+        	 <button class="book-btn" onclick="bookService(${bike.bikeId},'${bike.bikeModel}','${bike.bikeNumber}')" id="booking_form">Book Service</button>
+        </div>
+    </div>
+</div>`;
         });
     })
     .catch(error => {
         console.error('Error fetching bike data:', error);
     });
+
 });
-
-
 function addBike() {
 	bikeList.style.display='none';
 	serviceForm.style.display='none';
@@ -57,6 +60,18 @@ function bookService(bikeId,bikeModel,bikeNumber) {
 }
 function bookAlert(){
 	alert("Check your mail for conformation.");
+}
+function removeBike(bikeId){
+	    const params = new URLSearchParams();
+    console.log(bikeId);
+    params.append('bikeId', bikeId);
+    fetch('removeBikeServlet', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: params
+    })
 }
 
 

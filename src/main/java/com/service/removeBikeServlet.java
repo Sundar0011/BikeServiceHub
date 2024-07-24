@@ -6,18 +6,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class removeBikeServlet
  */
-public class LoginServlet extends HttpServlet {
+public class removeBikeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public removeBikeServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,29 +35,13 @@ public class LoginServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//doGet(request, response);
-		
-		String Email=request.getParameter("Email");
-		String Password=request.getParameter("Password");
-		String name="";
-		String code="";
-		String phone="";
-		System.out.println(Email+Password);
-		Signup signup=new Signup(name,phone,Email,Password,code);
-		SignupDAO signupDAO=new SignupDAO();
-		if(signupDAO.checklogin(Email,Password))
-		{
-			int id=signupDAO.fecthUserId(Email);
-			System.out.println(id);
-			HttpSession session=request.getSession();
-			session.setAttribute("userId",id);
+		int id=Integer.parseInt(request.getParameter("bikeId"));
+		UserDAO userDAO=new UserDAO();
+		if(userDAO.removeBike(id)) {
 			response.sendRedirect("Bike.html");
 		}
-		else
-		{
-			response.sendRedirect("UserLogin.html");
+			
+		
 		}
-	}
 
 }

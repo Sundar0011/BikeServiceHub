@@ -17,8 +17,8 @@
   <title>Bike Service Hub</title>
 </head>
 
-<body style="background-color: rgb(255, 255, 255);">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="background-color:#264653; position:relative;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: sticky; top: 0;">
 
     <div class="container-fluid">
 
@@ -33,8 +33,7 @@
 
         <a class="navbar-brand" href="#">
           <div class="title-container">
-            <img style="width: 80px;" class="logo"
-              src="./image/WhatsApp_Image_2024-07-22_at_22.10.07_a7d02c26-removebg-preview.png" alt="">
+       
             <p class="title">Bike Service Hub</p>
           </div>
         </a>
@@ -72,17 +71,20 @@
           </li>
 
         </ul>
-
-
+		<a href="index.html">
+			<button class="btn btn-outline-success" id="book-btn">logout</button>
+		</a> 
       </div>
 
     </div>
 
   </nav>
-  <div id="home-content">
+  <div class="home-content" id="home-content">
+  <img class="admin-img" src="./image/WhatsApp_Image_2024-07-24_at_21.28.28_f421a80a-removebg-preview.png" >
+    <div class="welcome-content">
       <p class="main-content">Welcome to the BikeHub Admin Dashboard!</p>
       <p class="body-content">As an administrator, you can manage the various aspects of the BikeHub application. Use the navigation links to access different sections of the admin portal.</p>
-
+    </div>
   </div>
   <div class="list-container" id="list-container">
 
@@ -96,15 +98,16 @@
     </div>
     <div class="ready-list" id="ready-list">
       <h1>ready</h1>
-
     </div>
     <div class="complete-list" id="complete-list">
       <h1>complete</h1>
-
     </div>
-
   </div>
+
   <script src="./AdminHome.js"></script>
+  <footer style="background-color: #33949d; color: #f4f4f4; text-align: center; padding: 1px; position: fixed; width: 100%; bottom: 0;">
+    <p>&copy; 2024 Bike Service Hub. All rights reserved.</p>
+</footer>
 </body>
 
 </html>
