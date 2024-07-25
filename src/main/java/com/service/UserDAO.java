@@ -242,12 +242,12 @@ try {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","sys as sysdba","sundar");
-			PreparedStatement preparedStatement=con.prepareStatement("delete bike where id=?");
+			PreparedStatement preparedStatement=con.prepareStatement("delete bike where bike_id=?");
 			preparedStatement.setInt(1, id);
 			preparedStatement.executeQuery();
 			return true;
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}
 		return false;
 	}

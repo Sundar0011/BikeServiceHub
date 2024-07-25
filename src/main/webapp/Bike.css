@@ -14,12 +14,20 @@
     
     }
 .bike-card{
+	background-color:  var(--color-card);
     margin: 10px 50px;
+    color: var(--color-text);
     padding: 10px 20px 10px 20px;
     display: flex;
-    border-radius: 5px;
     justify-content: space-between;
-    background-color: var(--color-card);
+    border: 2px solid rgba(27, 2, 63, 0.77);
+    border-radius: 10px;
+}
+.bikeImg{
+	width: 220px;
+	height:300px;
+	border-radius: 10px;
+	margin-right: 50px;
 }
 
 .book-btn{

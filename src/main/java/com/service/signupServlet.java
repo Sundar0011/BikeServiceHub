@@ -51,7 +51,7 @@ public class signupServlet extends HttpServlet {
 			if(sendMail.sendmail(signup)) {
 				HttpSession session=request.getSession();
 				session.setAttribute("authcode", signup);
-				response.sendRedirect("verify.jsp");
+				response.sendRedirect("verify.html");
 			}
 			else {
 				response.getWriter().print("<h1>Enter valid user name Password</h1>");

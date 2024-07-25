@@ -15,18 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(response => response.json())
     .then(data => {
-        data.forEach(list => {
+        data.forEach(bike => {
             bikeList.innerHTML += `
-                 <div class="card-container">
+  
     <div class="bike-card">
         <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
         <div class="card-body">
             <h5 class="card-title">Bike Model: ${bike.bikeModel}</h5>
-            <p class="card-text">Bike Number: ${bike.bikeId}</p>
-            <button class="book-btn" onclick="removeBike(${bike.bikeId})" id="booking_form">RemoveBike</button>
+            <p class="card-text">Bike Number: ${bike.bikeNumber}</p>
+            <button class="book-btn" onclick="removeBike(${bike.bikeId})">RemoveBike</button>
         	 <button class="book-btn" onclick="bookService(${bike.bikeId},'${bike.bikeModel}','${bike.bikeNumber}')" id="booking_form">Book Service</button>
         </div>
-    </div>
 </div>`;
         });
     })
@@ -72,6 +71,8 @@ function removeBike(bikeId){
         },
         body: params
     })
+   window.location.reload();
+	
 }
 
 

@@ -37,7 +37,7 @@ function pending(){
         <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
         <div class="card-body">
             <h5 class="card-title">Bike Model: ${list.bikeModel}</h5>
-            <p class="card-text">Bike Number: ${list.bikeId}</p>
+            <p class="card-text">Bike Number: ${list.bikeNumber}</p>
             <p class="card-text">Service Date: ${list.serviceDate}</p>
             <p class="card-text">Service Description: ${list.serviceDescription}</p>
             <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'Delivery')" id="booking_form">Ready for Delivery</button>
@@ -123,7 +123,7 @@ function ready(){
         <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
         <div class="card-body">
             <h5 class="card-title">Bike Model: ${list.bikeModel}</h5>
-            <p class="card-text">Bike Number: ${list.bikeId}</p>
+            <p class="card-text">Bike Number: ${list.bikeNumber}</p>
             <p class="card-text">Service Date: ${list.serviceDate}</p>
             <p class="card-text">Service Description: ${list.serviceDescription}</p>
             <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'Deliverd')" id="booking_form">Confirm Delivered</button>
@@ -164,10 +164,9 @@ function complete(){
         <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
         <div class="card-body">
             <h5 class="card-title">Bike Model: ${list.bikeModel}</h5>
-            <p class="card-text">Bike Number: ${list.bikeId}</p>
+            <p class="card-text">Bike Number: ${list.bikeNumber}</p>
             <p class="card-text">Service Date: ${list.serviceDate}</p>
             <p class="card-text">Service Description: ${list.serviceDescription}</p>
-            
         </div>
     </div>
 </div>`;
@@ -214,15 +213,17 @@ function confirm(){
     .then(data => {
         data.forEach(list => {
             confirmList.innerHTML += `
-                 <div class="card-container">
+ <div class="card-container">
     <div class="bike-card">
         <img class="bikeImg" src="./image/bike.jpg" alt="Bike Image">
         <div class="card-body">
             <h5 class="card-title">Bike Model: ${list.bikeModel}</h5>
-            <p class="card-text">Bike Number: ${list.bikeId}</p>
+            <p class="card-text">Bike Number: ${list.bikeNumber}</p>
             <p class="card-text">Service Date: ${list.serviceDate}</p>
             <p class="card-text">Service Description: ${list.serviceDescription}</p>
-        
+            <p>vannakam</p>
+   			<button class="book-btn"  id="" onclick="changeToDelivery(${list.bikeId},'cancel')">cancel</button>
+            <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'pending')" id="booking_form">confirm</button>
         </div>
     </div>
 </div>`;
