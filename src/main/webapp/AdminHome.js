@@ -221,7 +221,6 @@ function confirm(){
             <p class="card-text">Bike Number: ${list.bikeNumber}</p>
             <p class="card-text">Service Date: ${list.serviceDate}</p>
             <p class="card-text">Service Description: ${list.serviceDescription}</p>
-            <p>vannakam</p>
    			<button class="book-btn"  id="" onclick="changeToDelivery(${list.bikeId},'cancel')">cancel</button>
             <button class="book-btn" onclick="changeToDelivery(${list.bikeId},'pending')" id="booking_form">confirm</button>
         </div>
