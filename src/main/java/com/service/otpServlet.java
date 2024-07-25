@@ -48,7 +48,7 @@ public class otpServlet extends HttpServlet {
 			SignupDAO db=new SignupDAO();
 			if(db.insert(userName,phone,Email,Password))
 			{
-				response.getWriter().print("Signup sccessfully");
+				response.sendRedirect("Bike.html");
 			}
 			else
 			{
